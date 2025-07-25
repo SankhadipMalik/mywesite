@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechToolsHub</title>
+    <meta name="description" content="Learn about TechToolsHub - your trusted source for developer tools and AI-powered code analysis. Our mission and team.">
+    <meta name="keywords" content="about TechToolsHub, developer tools, team, mission, AI code analysis">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <a href="/" class="text-2xl font-bold text-primary">TechToolsHub</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="hover:text-primary transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="hover:text-primary transition-colors">Tools</a>
+                        <div class="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="/tools/json-formatter.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">JSON Formatter</a>
+                            <a href="/tools/code-beautifier.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Code Beautifier</a>
+                            <a href="/tools/image-compressor.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Image Compressor</a>
+                            <a href="/tools/password-generator.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Password Generator</a>
+                            <a href="/tools/url-shortener.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">URL Shortener</a>
+                        </div>
+                    </div>
+                    <a href="/ai-code-explainer.html" class="hover:text-primary transition-colors">AI Code Explainer</a>
+                    <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+                    <a href="/about.html" class="text-primary font-semibold">About</a>
+                    <a href="/contact.html" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Hero Section -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    About TechToolsHub
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Empowering developers worldwide with cutting-edge tools and AI-powered solutions to enhance productivity and code quality.
+                </p>
+            </div>
+
+            <!-- Mission Section -->
+            <section class="mb-16">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Our Mission</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                        At TechToolsHub, we believe that great software starts with great tools. Our mission is to provide developers, programmers, and tech enthusiasts with a comprehensive suite of professional-grade utilities that streamline workflows and enhance code quality.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">
+                        We're committed to democratizing access to powerful development tools, making them freely available to everyone from beginners learning their first programming language to seasoned professionals building enterprise applications.
+                    </p>
+                </div>
+            </section>
+
+            <!-- What We Offer -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center">What We Offer</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Code Formatting Tools</h3>
+                        <p class="text-gray-600 dark:text-gray-400">JSON formatter, code beautifier, and syntax validators to keep your code clean and readable.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Media Optimization</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Image compression and optimization tools to reduce file sizes while maintaining quality.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Security Tools</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Password generators and security utilities to help protect your applications and accounts.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">URL Management</h3>
+                        <p class="text-gray-600 dark:text-gray-400">URL shortening services for better link management and sharing across platforms.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-primary">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">AI Code Analysis</h3>
+                        <p class="text-gray-600 dark:text-gray-400">GPT-4 powered code explanation and analysis to help you understand and improve your code.</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Educational Content</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Tutorials, guides, and blog posts to help you stay updated with the latest development trends.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Values -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-r from-primary to-secondary p-8 rounded-lg text-white">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Our Values</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Quality</h3>
+                            <p class="opacity-90">We're committed to delivering high-quality tools that meet professional standards and exceed expectations.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Accessibility</h3>
+                            <p class="opacity-90">Our tools are free and accessible to everyone, regardless of their background or experience level.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Innovation</h3>
+                            <p class="opacity-90">We continuously evolve our platform with cutting-edge technologies like AI to stay ahead of the curve.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology Stack -->
+            <section class="mb-16">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Built with Modern Technology</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 text-center">
+                        TechToolsHub is built using modern web technologies to ensure fast performance, security, and reliability.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <span class="text-orange-500 font-bold text-lg">HTML5</span>
+                            </div>
+                            <h4 class="font-semibold">HTML5</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <span class="text-blue-500 font-bold text-lg">CSS3</span>
+                            </div>
+                            <h4 class="font-semibold">Tailwind CSS</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <span class="text-yellow-500 font-bold text-lg">JS</span>
+                            </div>
+                            <h4 class="font-semibold">JavaScript</h4>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <span class="text-purple-500 font-bold text-lg">PHP</span>
+                            </div>
+                            <h4 class="font-semibold">PHP Backend</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center">
+                <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg">
+                    <h2 class="text-3xl font-bold mb-4">Ready to Boost Your Productivity?</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                        Join thousands of developers who trust TechToolsHub for their daily development needs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition-colors font-semibold">
+                            Explore Tools
+                        </a>
+                        <a href="/contact.html" class="border border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors font-semibold">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">TechToolsHub</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Your ultimate collection of developer tools and AI-powered utilities.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/tools/json-formatter.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">JSON Formatter</a></li>
+                        <li><a href="/tools/code-beautifier.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Code Beautifier</a></li>
+                        <li><a href="/tools/password-generator.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Password Generator</a></li>
+                        <li><a href="/ai-code-explainer.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">AI Code Explainer</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">About</a></li>
+                        <li><a href="/contact.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Contact</a></li>
+                        <li><a href="/privacy.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Privacy Policy</a></li>
+                        <li><a href="/blog/" class="text-gray-600 dark:text-gray-400 hover:text-primary">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-600 dark:text-gray-400">&copy; 2025 TechToolsHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>

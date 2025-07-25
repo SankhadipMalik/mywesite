@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechToolsHub - Developer Tools & AI Code Explainer</title>
+    <meta name="description" content="Comprehensive developer tools including JSON formatter, code beautifier, password generator, and AI-powered code explanation using GPT-4.">
+    <meta name="keywords" content="developer tools, JSON formatter, code beautifier, password generator, AI code explainer, programming tools">
+    <meta name="author" content="TechToolsHub">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TechToolsHub - Developer Tools & AI Code Explainer">
+    <meta property="og:description" content="Free developer tools and AI-powered code analysis for programmers">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header with Google AdSense Placeholder -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg">
+        <!-- AdSense Header Banner Placeholder -->
+        <div class="bg-gray-100 dark:bg-gray-700 text-center py-2">
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+                <!-- Replace this div with Google AdSense code -->
+                [Google AdSense Header Banner - 728x90]
+            </div>
+        </div>
+        
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h1 class="text-2xl font-bold text-primary">TechToolsHub</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="hover:text-primary transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="hover:text-primary transition-colors">Tools</a>
+                        <div class="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="/tools/json-formatter.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">JSON Formatter</a>
+                            <a href="/tools/code-beautifier.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Code Beautifier</a>
+                            <a href="/tools/image-compressor.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Image Compressor</a>
+                            <a href="/tools/password-generator.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Password Generator</a>
+                            <a href="/tools/url-shortener.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">URL Shortener</a>
+                        </div>
+                    </div>
+                    <a href="/ai-code-explainer.html" class="hover:text-primary transition-colors">AI Code Explainer</a>
+                    <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+                    <a href="/about.html" class="hover:text-primary transition-colors">About</a>
+                    <a href="/contact.html" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z"></path>
+                        </svg>
+                    </button>
+                    
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Home</a>
+                <a href="/tools/json-formatter.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">JSON Formatter</a>
+                <a href="/tools/code-beautifier.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Code Beautifier</a>
+                <a href="/tools/image-compressor.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Image Compressor</a>
+                <a href="/tools/password-generator.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Password Generator</a>
+                <a href="/tools/url-shortener.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">URL Shortener</a>
+                <a href="/ai-code-explainer.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">AI Code Explainer</a>
+                <a href="/blog/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Blog</a>
+                <a href="/about.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">About</a>
+                <a href="/contact.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <h1 class="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                TechToolsHub
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+                Your ultimate collection of developer tools and AI-powered code analysis. Boost your productivity with our comprehensive suite of utilities.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/ai-code-explainer.html" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition-colors font-semibold">
+                    Try AI Code Explainer
+                </a>
+                <a href="#tools" class="border border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors font-semibold">
+                    Browse Tools
+                </a>
+            </div>
+        </section>
+
+        <!-- Affiliate Banner Section -->
+        <section class="mb-16">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Hostinger Affiliate Banner -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="font-bold text-lg mb-3">🚀 Hostinger Hosting</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Get 75% off premium web hosting</p>
+                    <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-orange-600 transition-colors">
+                        Claim Deal
+                    </a>
+                </div>
+                
+                <!-- Udemy Affiliate Banner -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="font-bold text-lg mb-3">📚 Udemy Courses</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Learn programming from experts</p>
+                    <a href="#" class="bg-purple-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-purple-600 transition-colors">
+                        Browse Courses
+                    </a>
+                </div>
+                
+                <!-- Amazon Affiliate Banner -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="font-bold text-lg mb-3">🛒 Dev Books</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Best programming books on Amazon</p>
+                    <a href="#" class="bg-yellow-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-yellow-600 transition-colors">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">Developer Tools</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JSON Formatter -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">JSON Formatter</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Format, validate, and beautify your JSON data with syntax highlighting.</p>
+                    <a href="/tools/json-formatter.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+                        Use Tool
+                    </a>
+                </div>
+
+                <!-- Code Beautifier -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Code Beautifier</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Format and beautify HTML, CSS, and JavaScript code instantly.</p>
+                    <a href="/tools/code-beautifier.html" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
+                        Use Tool
+                    </a>
+                </div>
+
+                <!-- Image Compressor -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-purple-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Image Compressor</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Compress images to reduce file size while maintaining quality.</p>
+                    <a href="/tools/image-compressor.html" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition-colors">
+                        Use Tool
+                    </a>
+                </div>
+
+                <!-- Password Generator -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-red-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Password Generator</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Generate secure, random passwords with customizable options.</p>
+                    <a href="/tools/password-generator.html" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors">
+                        Use Tool
+                    </a>
+                </div>
+
+                <!-- URL Shortener -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-indigo-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">URL Shortener</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Create short, memorable URLs for easy sharing and tracking.</p>
+                    <a href="/tools/url-shortener.html" class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition-colors">
+                        Use Tool
+                    </a>
+                </div>
+
+                <!-- AI Code Explainer -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow border-2 border-primary">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">AI Code Explainer</h3>
+                        <span class="ml-2 px-2 py-1 bg-primary text-white text-xs rounded-full">AI</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Get detailed explanations of your code using GPT-4 AI technology.</p>
+                    <a href="/ai-code-explainer.html" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition-colors">
+                        Try AI Tool
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar AdSense -->
+        <aside class="mb-16">
+            <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg text-center">
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                    <!-- Replace this div with Google AdSense code -->
+                    [Google AdSense Sidebar Banner - 300x250]
+                </div>
+            </div>
+        </aside>
+
+        <!-- Blog Preview Section -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Latest Blog Posts</h2>
+                <a href="/blog/" class="text-primary hover:text-secondary transition-colors font-semibold">View All Posts →</a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-xl font-semibold mb-3">Getting Started with Developer Tools</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Learn how to maximize your productivity with essential developer tools and utilities.</p>
+                    <a href="/blog/" class="text-primary hover:text-secondary transition-colors font-semibold">Read More →</a>
+                </article>
+                
+                <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-xl font-semibold mb-3">AI in Code Analysis</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Discover how AI is revolutionizing code review and analysis for developers.</p>
+                    <a href="/blog/" class="text-primary hover:text-secondary transition-colors font-semibold">Read More →</a>
+                </article>
+                
+                <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-xl font-semibold mb-3">Best Practices for JSON</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Master JSON formatting and validation with these expert tips and tricks.</p>
+                    <a href="/blog/" class="text-primary hover:text-secondary transition-colors font-semibold">Read More →</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <!-- Footer AdSense Banner -->
+        <div class="bg-gray-100 dark:bg-gray-700 text-center py-4">
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+                <!-- Replace this div with Google AdSense code -->
+                [Google AdSense Footer Banner - 728x90]
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">TechToolsHub</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Your ultimate collection of developer tools and AI-powered utilities.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/tools/json-formatter.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">JSON Formatter</a></li>
+                        <li><a href="/tools/code-beautifier.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Code Beautifier</a></li>
+                        <li><a href="/tools/password-generator.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Password Generator</a></li>
+                        <li><a href="/ai-code-explainer.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">AI Code Explainer</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">About</a></li>
+                        <li><a href="/contact.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Contact</a></li>
+                        <li><a href="/privacy.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Privacy Policy</a></li>
+                        <li><a href="/blog/" class="text-gray-600 dark:text-gray-400 hover:text-primary">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-600 dark:text-gray-400">&copy; 2025 TechToolsHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>

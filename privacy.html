@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - TechToolsHub</title>
+    <meta name="description" content="TechToolsHub Privacy Policy - Learn how we collect, use, and protect your personal information when using our developer tools.">
+    <meta name="keywords" content="privacy policy, data protection, TechToolsHub, user privacy, GDPR compliance">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <a href="/" class="text-2xl font-bold text-primary">TechToolsHub</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="hover:text-primary transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="hover:text-primary transition-colors">Tools</a>
+                        <div class="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="/tools/json-formatter.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">JSON Formatter</a>
+                            <a href="/tools/code-beautifier.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Code Beautifier</a>
+                            <a href="/tools/image-compressor.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Image Compressor</a>
+                            <a href="/tools/password-generator.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Password Generator</a>
+                            <a href="/tools/url-shortener.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">URL Shortener</a>
+                        </div>
+                    </div>
+                    <a href="/ai-code-explainer.html" class="hover:text-primary transition-colors">AI Code Explainer</a>
+                    <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+                    <a href="/about.html" class="hover:text-primary transition-colors">About</a>
+                    <a href="/contact.html" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">Privacy Policy</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    Last updated: January 25, 2025
+                </p>
+            </div>
+
+            <!-- Content -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg prose dark:prose-invert max-w-none">
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Introduction</h2>
+                    <p class="mb-4">
+                        Welcome to TechToolsHub ("we," "our," or "us"). We are committed to protecting your privacy and ensuring transparency about how we collect, use, and protect your information when you use our website and developer tools.
+                    </p>
+                    <p class="mb-4">
+                        This Privacy Policy explains our practices regarding the collection, use, and disclosure of information that we receive when you use our services. By using TechToolsHub, you agree to the collection and use of information in accordance with this policy.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Information We Collect</h2>
+                    
+                    <h3 class="text-xl font-semibold mb-3">Information You Provide</h3>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Contact information when you reach out to us (name, email address)</li>
+                        <li>Feedback and suggestions you submit through our contact forms</li>
+                        <li>Any code or data you input into our tools for processing</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-3">Automatically Collected Information</h3>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>IP address and browser information</li>
+                        <li>Usage data and analytics (pages visited, time spent, features used)</li>
+                        <li>Device information (browser type, operating system)</li>
+                        <li>Cookies and similar tracking technologies</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">How We Use Your Information</h2>
+                    <p class="mb-4">We use the collected information for the following purposes:</p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li><strong>Service Provision:</strong> To provide, maintain, and improve our developer tools</li>
+                        <li><strong>Communication:</strong> To respond to your inquiries and provide customer support</li>
+                        <li><strong>Analytics:</strong> To understand how our tools are used and improve user experience</li>
+                        <li><strong>Security:</strong> To detect, prevent, and address technical issues and security threats</li>
+                        <li><strong>Legal Compliance:</strong> To comply with applicable laws and regulations</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Data Processing and Storage</h2>
+                    
+                    <h3 class="text-xl font-semibold mb-3">Tool Data Processing</h3>
+                    <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 p-4 rounded-lg mb-4">
+                        <p class="text-green-800 dark:text-green-200">
+                            <strong>Important:</strong> Most of our tools (JSON Formatter, Code Beautifier, Image Compressor, Password Generator) process your data entirely in your browser. We do not store or transmit this data to our servers.
+                        </p>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mb-3">AI Code Explainer</h3>
+                    <p class="mb-4">
+                        When you use our AI Code Explainer powered by OpenAI's GPT-4:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Your code is sent to OpenAI's servers for analysis</li>
+                        <li>We do not store your code on our servers</li>
+                        <li>OpenAI's privacy policy and data handling practices apply</li>
+                        <li>Code submissions are subject to OpenAI's usage policies</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-3">URL Shortener</h3>
+                    <p class="mb-4">
+                        For our URL shortener service:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>We store the original URL, short code, and creation timestamp</li>
+                        <li>We log IP addresses for security and abuse prevention</li>
+                        <li>Data is stored in text files on our servers</li>
+                        <li>We do not track clicks or user behavior on shortened links</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Cookies and Tracking</h2>
+                    <p class="mb-4">We use cookies and similar technologies to:</p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Remember your theme preference (dark/light mode)</li>
+                        <li>Analyze website usage through Google Analytics</li>
+                        <li>Serve relevant advertisements through Google AdSense</li>
+                        <li>Prevent abuse and ensure security</li>
+                    </ul>
+                    <p class="mb-4">
+                        You can control cookies through your browser settings. However, disabling cookies may affect the functionality of some features.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Third-Party Services</h2>
+                    <p class="mb-4">We integrate with the following third-party services:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">OpenAI (GPT-4)</h4>
+                            <p class="text-sm">Used for AI code analysis. Subject to OpenAI's privacy policy and terms of service.</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Google Analytics</h4>
+                            <p class="text-sm">Used for website analytics and usage tracking. Data is anonymized where possible.</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Google AdSense</h4>
+                            <p class="text-sm">Used for displaying advertisements. Subject to Google's privacy policy.</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Tailwind CSS CDN</h4>
+                            <p class="text-sm">Used for styling. No personal data is collected by this service.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Data Security</h2>
+                    <p class="mb-4">
+                        We implement appropriate security measures to protect your information:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>HTTPS encryption for all data transmission</li>
+                        <li>Regular security assessments and updates</li>
+                        <li>Limited access to personal data on a need-to-know basis</li>
+                        <li>Secure hosting infrastructure</li>
+                        <li>Rate limiting to prevent abuse</li>
+                    </ul>
+                    <p class="mb-4">
+                        However, no method of transmission over the Internet is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Your Rights</h2>
+                    <p class="mb-4">
+                        You have the following rights regarding your personal information:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li><strong>Access:</strong> Request information about what personal data we hold about you</li>
+                        <li><strong>Correction:</strong> Request correction of inaccurate personal data</li>
+                        <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+                        <li><strong>Portability:</strong> Request a copy of your data in a structured format</li>
+                        <li><strong>Objection:</strong> Object to certain processing of your personal data</li>
+                        <li><strong>Withdrawal:</strong> Withdraw consent where processing is based on consent</li>
+                    </ul>
+                    <p class="mb-4">
+                        To exercise these rights, please contact us at privacy@techtoolshub.com
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Data Retention</h2>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li><strong>Contact Information:</strong> Retained until you request deletion or for 3 years of inactivity</li>
+                        <li><strong>URL Shortener Data:</strong> Retained indefinitely unless deletion is requested</li>
+                        <li><strong>Analytics Data:</strong> Retained according to Google Analytics retention settings (26 months)</li>
+                        <li><strong>Log Files:</strong> Retained for 90 days for security purposes</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Children's Privacy</h2>
+                    <p class="mb-4">
+                        Our services are not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">International Data Transfers</h2>
+                    <p class="mb-4">
+                        Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place to protect your data in accordance with this privacy policy and applicable laws.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Changes to This Privacy Policy</h2>
+                    <p class="mb-4">
+                        We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+                    <p class="mb-4">
+                        If you have any questions about this Privacy Policy or our privacy practices, please contact us:
+                    </p>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <p class="mb-2"><strong>Email:</strong> privacy@techtoolshub.com</p>
+                        <p class="mb-2"><strong>General Contact:</strong> support@techtoolshub.com</p>
+                        <p><strong>Business Inquiries:</strong> business@techtoolshub.com</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">TechToolsHub</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Your ultimate collection of developer tools and AI-powered utilities.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/tools/json-formatter.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">JSON Formatter</a></li>
+                        <li><a href="/tools/code-beautifier.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Code Beautifier</a></li>
+                        <li><a href="/tools/password-generator.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Password Generator</a></li>
+                        <li><a href="/ai-code-explainer.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">AI Code Explainer</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">About</a></li>
+                        <li><a href="/contact.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Contact</a></li>
+                        <li><a href="/privacy.html" class="text-gray-600 dark:text-gray-400 hover:text-primary">Privacy Policy</a></li>
+                        <li><a href="/blog/" class="text-gray-600 dark:text-gray-400 hover:text-primary">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-600 dark:text-gray-400">&copy; 2025 TechToolsHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>

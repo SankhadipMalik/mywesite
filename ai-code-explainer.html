@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Explainer - GPT-4 Powered Analysis - TechToolsHub</title>
+    <meta name="description" content="Get detailed code explanations using GPT-4 AI. Understand code line-by-line, find bugs, and get improvement suggestions.">
+    <meta name="keywords" content="AI code explainer, code analysis, GPT-4, code review, programming help, code understanding">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <a href="/" class="text-2xl font-bold text-primary">TechToolsHub</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="hover:text-primary transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="hover:text-primary transition-colors">Tools</a>
+                        <div class="absolute top-full left-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="/tools/json-formatter.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">JSON Formatter</a>
+                            <a href="/tools/code-beautifier.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Code Beautifier</a>
+                            <a href="/tools/image-compressor.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Image Compressor</a>
+                            <a href="/tools/password-generator.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Password Generator</a>
+                            <a href="/tools/url-shortener.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">URL Shortener</a>
+                        </div>
+                    </div>
+                    <a href="/ai-code-explainer.html" class="text-primary font-semibold">AI Code Explainer</a>
+                    <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+                    <a href="/about.html" class="hover:text-primary transition-colors">About</a>
+                    <a href="/contact.html" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    AI Code Explainer
+                </h1>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Get detailed explanations of your code using GPT-4 AI technology</p>
+                <div class="inline-flex items-center space-x-2 bg-blue-100 dark:bg-blue-900 px-4 py-2 rounded-lg">
+                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-blue-700 dark:text-blue-300 font-semibold">Powered by GPT-4</span>
+                </div>
+            </div>
+
+            <!-- AdSense Banner -->
+            <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center mb-8">
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                    <!-- Replace this div with Google AdSense code -->
+                    [Google AdSense Banner - 728x90]
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Input Section -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold">Your Code</h2>
+                        <div class="flex space-x-2">
+                            <button id="clearCode" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
+                                Clear
+                            </button>
+                            <button id="pasteCode" class="px-3 py-1 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors">
+                                Paste
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Language Selection -->
+                    <div class="mb-4">
+                        <label for="language" class="block text-sm font-medium mb-2">Programming Language</label>
+                        <select id="language" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700">
+                            <option value="auto">Auto-detect</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="c">C</option>
+                            <option value="csharp">C#</option>
+                            <option value="php">PHP</option>
+                            <option value="ruby">Ruby</option>
+                            <option value="go">Go</option>
+                            <option value="rust">Rust</option>
+                            <option value="typescript">TypeScript</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="sql">SQL</option>
+                        </select>
+                    </div>
+                    
+                    <textarea id="codeInput" placeholder="Paste your code here for AI analysis..." class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    
+                    <div class="mt-4">
+                        <button id="explainBtn" class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-secondary transition-colors font-semibold">
+                            <span id="explainBtnText">Explain Code with AI</span>
+                            <svg id="explainBtnSpinner" class="hidden animate-spin ml-2 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Output Section -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold">AI Explanation</h2>
+                        <button id="copyExplanation" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+                            Copy
+                        </button>
+                    </div>
+                    
+                    <div id="explanationOutput" class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 overflow-y-auto">
+                        <div class="text-gray-500 dark:text-gray-400 text-center mt-20">
+                            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <p>Paste your code and click "Explain Code with AI" to get detailed analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Code Examples -->
+            <div class="mt-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4">Try with Sample Code</h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <button class="sample-code p-4 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:border-primary transition-colors" data-code="function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10));" data-lang="javascript">
+                        <h3 class="font-semibold mb-2">JavaScript - Fibonacci</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Recursive function to calculate Fibonacci numbers</p>
+                    </button>
+                    
+                    <button class="sample-code p-4 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:border-primary transition-colors" data-code="def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    
+    return quick_sort(left) + middle + quick_sort(right)
+
+print(quick_sort([3,6,8,10,1,2,1]))" data-lang="python">
+                        <h3 class="font-semibold mb-2">Python - Quick Sort</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Efficient sorting algorithm implementation</p>
+                    </button>
+                    
+                    <button class="sample-code p-4 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:border-primary transition-colors" data-code="class BinaryTree {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+    
+    insert(value) {
+        if (value < this.value) {
+            if (this.left === null) {
+                this.left = new BinaryTree(value);
+            } else {
+                this.left.insert(value);
+            }
+        } else {
+            if (this.right === null) {
+                this.right = new BinaryTree(value);
+            } else {
+                this.right.insert(value);
+            }
+        }
+    }
+}" data-lang="javascript">
+                        <h3 class="font-semibold mb-2">JavaScript - Binary Tree</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Binary search tree data structure</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="mt-12 grid md:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                    <svg class="w-12 h-12 text-primary mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold mb-2">Line-by-Line</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Detailed explanation of each code line</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                    <svg class="w-12 h-12 text-red-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold mb-2">Bug Detection</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Identify potential issues and bugs</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                    <svg class="w-12 h-12 text-green-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold mb-2">Improvements</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Suggestions for better code practices</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                    <svg class="w-12 h-12 text-purple-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold mb-2">Multi-Language</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Support for 15+ programming languages</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <p class="text-gray-600 dark:text-gray-400">&copy; 2025 TechToolsHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+    <script>
+        // AI Code Explainer functionality
+        const codeInput = document.getElementById('codeInput');
+        const explanationOutput = document.getElementById('explanationOutput');
+        const explainBtn = document.getElementById('explainBtn');
+        const explainBtnText = document.getElementById('explainBtnText');
+        const explainBtnSpinner = document.getElementById('explainBtnSpinner');
+        const clearCode = document.getElementById('clearCode');
+        const pasteCode = document.getElementById('pasteCode');
+        const copyExplanation = document.getElementById('copyExplanation');
+        const languageSelect = document.getElementById('language');
+        const sampleCodeButtons = document.querySelectorAll('.sample-code');
+
+        function setLoading(loading) {
+            if (loading) {
+                explainBtnText.textContent = 'Analyzing Code...';
+                explainBtnSpinner.classList.remove('hidden');
+                explainBtn.disabled = true;
+                explainBtn.classList.add('opacity-75');
+            } else {
+                explainBtnText.textContent = 'Explain Code with AI';
+                explainBtnSpinner.classList.add('hidden');
+                explainBtn.disabled = false;
+                explainBtn.classList.remove('opacity-75');
+            }
+        }
+
+        function formatExplanation(text) {
+            // Convert the plain text response to formatted HTML
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/`(.*?)`/g, '<code class="bg-gray-200 dark:bg-gray-600 px-1 rounded">$1</code>')
+                .replace(/\n\n/g, '</p><p class="mb-4">')
+                .replace(/\n/g, '<br>');
+        }
+
+        explainBtn.addEventListener('click', async () => {
+            const code = codeInput.value.trim();
+            if (!code) {
+                alert('Please enter some code to analyze');
+                return;
+            }
+
+            setLoading(true);
+            
+            try {
+                const response = await fetch('/ai-code-explainer.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `code=${encodeURIComponent(code)}&language=${encodeURIComponent(languageSelect.value)}`
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    const formattedExplanation = formatExplanation(data.explanation);
+                    explanationOutput.innerHTML = `<div class="prose dark:prose-invert max-w-none"><p class="mb-4">${formattedExplanation}</p></div>`;
+                } else {
+                    explanationOutput.innerHTML = `
+                        <div class="text-red-500 text-center mt-20">
+                            <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                            </svg>
+                            <p>Error: ${data.error || 'Failed to analyze code'}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                explanationOutput.innerHTML = `
+                    <div class="text-red-500 text-center mt-20">
+                        <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p>Network error. Please try again.</p>
+                    </div>
+                `;
+            } finally {
+                setLoading(false);
+            }
+        });
+
+        clearCode.addEventListener('click', () => {
+            codeInput.value = '';
+            explanationOutput.innerHTML = `
+                <div class="text-gray-500 dark:text-gray-400 text-center mt-20">
+                    <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p>Paste your code and click "Explain Code with AI" to get detailed analysis</p>
+                </div>
+            `;
+        });
+
+        pasteCode.addEventListener('click', async () => {
+            try {
+                const text = await navigator.clipboard.readText();
+                codeInput.value = text;
+            } catch (error) {
+                alert('Unable to paste from clipboard. Please paste manually.');
+            }
+        });
+
+        copyExplanation.addEventListener('click', async () => {
+            const text = explanationOutput.textContent;
+            if (!text.trim()) {
+                alert('No explanation to copy');
+                return;
+            }
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                copyExplanation.textContent = 'Copied!';
+                copyExplanation.classList.add('bg-green-500');
+                copyExplanation.classList.remove('bg-blue-500');
+                
+                setTimeout(() => {
+                    copyExplanation.textContent = 'Copy';
+                    copyExplanation.classList.remove('bg-green-500');
+                    copyExplanation.classList.add('bg-blue-500');
+                }, 2000);
+            } catch (error) {
+                alert('Failed to copy explanation');
+            }
+        });
+
+        // Sample code buttons
+        sampleCodeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.getAttribute('data-code');
+                const lang = button.getAttribute('data-lang');
+                codeInput.value = code;
+                languageSelect.value = lang;
+                
+                // Scroll to input
+                codeInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    </script>
+</body>
+</html>
