@@ -1,8 +1,8 @@
-# TechToolsHub - Developer Tools Platform
+# Internet Speed Booster - Full Stack Web Application
 
 ## Overview
 
-TechToolsHub is a comprehensive multi-page developer tools website offering various utilities for developers, including JSON formatting, code beautification, image compression, password generation, URL shortening, and AI-powered code explanation. The platform is designed as a static website with some PHP backend functionality for AI features and URL shortening.
+This is a comprehensive internet speed testing and optimization web application built with React frontend and Express backend. The application provides users with tools to test their internet speed, get optimization recommendations, and access educational content about improving network performance. It's designed as a Progressive Web App (PWA) with SEO optimization and monetization through Google AdSense integration.
 
 ## User Preferences
 
@@ -11,105 +11,110 @@ Preferred communication style: Simple, everyday language.
 ## System Architecture
 
 ### Frontend Architecture
-- **Technology Stack**: Pure HTML5, Tailwind CSS (via CDN), and vanilla JavaScript
-- **Design Pattern**: Multi-page application with shared navigation and styling
-- **Responsive Design**: Mobile-first approach using Tailwind's responsive utilities
-- **Theme System**: Dark/light mode toggle with localStorage persistence
-- **SEO Optimization**: Comprehensive meta tags, Open Graph, and structured data
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and optimized production builds
+- **UI Library**: shadcn/ui components built on Radix UI primitives
+- **Styling**: Tailwind CSS with custom design system
+- **State Management**: TanStack Query for server state management
+- **Routing**: Wouter for lightweight client-side routing
+- **Form Handling**: React Hook Form with Zod validation
 
 ### Backend Architecture
-- **Primary Technology**: PHP for server-side functionality
-- **API Integration**: OpenAI GPT-4 API for code explanation features
-- **Data Storage**: File-based storage for URL shortener (no database dependency)
-- **Configuration Management**: Centralized config.php for API keys and settings
+- **Runtime**: Node.js with Express.js framework
+- **Language**: TypeScript with ES modules
+- **API Design**: RESTful endpoints for feedback and blog content
+- **Email Service**: Nodemailer for feedback notifications
+- **Session Management**: PostgreSQL session store
+
+### Database Layer
+- **ORM**: Drizzle ORM for type-safe database operations
+- **Database**: PostgreSQL (configured for Neon serverless)
+- **Schema**: Structured tables for feedback and blog posts
+- **Migrations**: Drizzle Kit for database schema management
 
 ## Key Components
 
-### Core Pages
-1. **Home Page** (`index.html`) - Landing page with tool cards and navigation
-2. **Developer Tools** (`tools/` directory):
-   - JSON Formatter & Validator
-   - Code Beautifier (HTML/CSS/JS)
-   - Image Compressor
-   - Password Generator
-   - URL Shortener
-3. **AI Code Explainer** (`ai-code-explainer.html`) - Code analysis interface
-4. **Blog Section** (`blog/index.html`) - SEO-optimized blog template
-5. **Static Pages** - About, Contact, Privacy Policy
+### Core Features
+1. **Speed Test Tool**: WebRTC-based internet speed testing with download, upload, and ping measurements
+2. **Optimization Tips**: Cache clearing, DNS recommendations, and performance suggestions
+3. **Device Analysis**: Browser and OS detection with personalized recommendations
+4. **Feedback System**: User feedback collection with email notifications
+5. **Blog System**: SEO-optimized blog for educational content
 
-### JavaScript Functionality (`scripts.js`)
-- Theme toggle system with system preference detection
-- Mobile menu handling
-- Scroll-to-top functionality
-- Form validation and interaction handling
+### UI Components
+- **Modular Design**: Reusable components following atomic design principles
+- **Accessibility**: ARIA-compliant components with keyboard navigation
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **Dark Mode**: Theme switching capability built into design system
 
-### PHP Backend Components
-- **Configuration** (`config.php`) - API key management
-- **AI Code Explainer** (`ai-code-explainer.php`) - OpenAI API integration
-- **URL Shortener** (`url-shortener.php`) - Link shortening service
+### SEO & Performance
+- **Meta Tags**: Comprehensive Open Graph and Twitter Card meta tags
+- **Structured Data**: JSON-LD schema for FAQ and organization data
+- **PWA Features**: Service worker, manifest, and offline capabilities
+- **Performance**: Lazy loading, code splitting, and optimized assets
 
 ## Data Flow
 
-### AI Code Explanation Flow
-1. User inputs code in textarea on `ai-code-explainer.html`
-2. Frontend sends POST request to `ai-code-explainer.php`
-3. PHP backend processes request and calls OpenAI GPT-4 API
-4. AI provides step-by-step code analysis, bug detection, and improvement suggestions
-5. Formatted response returned to frontend for display
+### Speed Test Flow
+1. User initiates speed test from main interface
+2. Client performs network measurements using fetch API and WebRTC
+3. Results displayed with sharing capabilities
+4. Optional feedback collection for improvement
 
-### URL Shortening Flow
-1. User submits long URL via form on `url-shortener.html`
-2. Frontend posts to `url-shortener.php`
-3. PHP generates random short code and stores mapping
-4. Short URL returned to user for sharing
+### Content Management Flow
+1. Blog posts stored in PostgreSQL with slug-based routing
+2. SEO-friendly URLs with proper meta tags
+3. Static content served through Express with Vite integration
+4. Search functionality for content discovery
 
-### Theme Management Flow
-1. JavaScript detects system preference or saved theme
-2. Theme toggle updates DOM classes and localStorage
-3. All pages respect theme preference across sessions
+### Feedback Processing
+1. User submits feedback through validated form
+2. Data stored in PostgreSQL with timestamp
+3. Email notification sent to admin via Nodemailer
+4. Success confirmation displayed to user
 
 ## External Dependencies
 
-### CDN Dependencies
-- **Tailwind CSS**: Frontend styling framework (via CDN)
-- **No additional JavaScript libraries**: Pure vanilla JS implementation
+### Core Dependencies
+- **Database**: Neon PostgreSQL serverless database
+- **Email Service**: SMTP provider for Nodemailer integration
+- **CDN**: Font delivery through Google Fonts
+- **Analytics**: Google AdSense integration for monetization
 
-### API Integrations
-- **OpenAI API**: GPT-4 model for code explanation
-  - Endpoint: OpenAI Chat Completions API
-  - Model: gpt-4
-  - Purpose: Detailed code analysis and explanation
+### Development Tools
+- **Type Safety**: TypeScript across full stack
+- **Code Quality**: ESLint and Prettier configuration
+- **Build Tools**: Vite with React plugins and optimization
+- **Development**: Hot reload and error overlays for debugging
 
-### Monetization Integrations
-- **Google AdSense**: Placeholder blocks for header, sidebar, and footer ads
-- **Affiliate Programs**: Designated spaces for Hostinger, Udemy, and Amazon banners
+### UI Libraries
+- **Component Library**: Radix UI primitives with custom styling
+- **Icons**: Lucide React icon library
+- **Styling**: Tailwind CSS with custom design tokens
+- **Forms**: React Hook Form with Zod schema validation
 
 ## Deployment Strategy
 
-### Static Hosting Requirements
-- **Web Server**: Apache or Nginx with PHP support
-- **PHP Version**: 7.4+ recommended for OpenAI API compatibility
-- **File Permissions**: Write access for URL shortener data storage
-- **SSL Certificate**: Required for secure API communications
+### Build Process
+1. **Frontend**: Vite builds optimized React application to `dist/public`
+2. **Backend**: esbuild compiles TypeScript server to `dist/index.js`
+3. **Database**: Drizzle migrations applied during deployment
+4. **Assets**: Static files served through Express in production
 
-### Configuration Steps
-1. Upload all files maintaining directory structure
-2. Set OpenAI API key in `config.php`
-3. Configure web server to handle PHP files
-4. Ensure proper file permissions for data storage
-5. Set up Google AdSense integration
-6. Configure affiliate marketing placements
+### Environment Configuration
+- **Development**: Hot reload with Vite dev server proxy
+- **Production**: Single Express server serving both API and static files
+- **Database**: Environment-based connection strings
+- **Email**: SMTP configuration through environment variables
 
-### SEO Considerations
-- All pages include comprehensive meta tags
-- Structured data markup for enhanced search results
-- Canonical URLs and Open Graph tags
-- Blog section ready for WordPress integration
-- Responsive design for mobile-first indexing
+### Performance Optimization
+- **Code Splitting**: Automatic route-based code splitting
+- **Asset Optimization**: Image compression and lazy loading
+- **Caching**: Browser caching headers and service worker
+- **CDN Integration**: Static asset delivery optimization
 
-### Performance Optimizations
-- CDN-based Tailwind CSS for fast loading
-- Minimal JavaScript footprint
-- Client-side theme persistence
-- Optimized image handling for compressor tool
-- Efficient PHP backend with minimal dependencies
+### Monitoring & Analytics
+- **Error Tracking**: Console logging and error boundaries
+- **Performance**: Web Vitals monitoring capabilities
+- **User Analytics**: Google AdSense integration for insights
+- **Feedback Loop**: Direct user feedback collection system
